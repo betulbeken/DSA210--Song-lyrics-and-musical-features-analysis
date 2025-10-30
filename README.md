@@ -1,5 +1,6 @@
 # Song_lyrics_and_musical_features_analysis
-I am Betül Eken, a sophomore Computer Science and Engineering student at Sabancı University
+I am Betül Eken, a sophomore Computer Science and Engineering student at Sabancı University.
+
 This is my data science(DSA210) term project about songs, their lyrics and their features like danceability, energy, liveness, valence.
 
 
