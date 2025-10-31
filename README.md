@@ -1,59 +1,79 @@
-# Song_lyrics_and_musical_features_analysis
-I am Betül Eken, a sophomore Computer Science and Engineering student at Sabancı University.
+# 🎵 Music Features & Lyrics Analysis
 
-This is my data science(DSA210) term project about songs, their lyrics and their features like danceability, energy, liveness, valence.
-
-
-# 🎵 Song Emotion and Feature Analyzer
-
-I'm **Betül Eken**, a freshman Computer Science and Engineering student at **Sabancı University**.
-
-This repository contains my **term project for DSA 210: Introduction to Data Science (Fall 2025–2026)**.
+I'm **Betül Eken**, a sophomore Computer Science and Engineering student at Sabancı University.  
+This is my **term project for DSA210 (Introduction to Data Science)**.
 
 ---
 
-## 🧩 Project Overview
-
-Music is a combination of both sound and language — the audio features of a song define its rhythm and tone, while the lyrics reflect the emotions and stories behind it.  
-This project aims to analyze how **musical properties (danceability, energy, valence, etc.)** relate to **lyrics-based characteristics (such as word count and vocabulary richness)**.
-
-By merging two public datasets from Kaggle — one containing audio features and another containing lyrics — I created a combined dataset with around **1,700 songs and over 15 features**.  
-The analysis explores statistical and behavioral patterns in songs and attempts to understand how the sound and words of a song interact.
+## 📘 Table of Contents
+1. [Project Overview](#project-overview)  
+2. [Motivation](#motivation)  
+3. [Objectives](#objectives)  
+4. [Research Questions](#research-questions)  
+5. [Data Collection & Sources](#data-collection--sources)  
+6. [Tools & Libraries](#tools--libraries)  
+7. [Planned Timeline](#planned-timeline)
 
 ---
 
-## 🎯 Motivation
+## 🎯 Project Overview
+This project explores the relationship between **musical characteristics** (such as energy, loudness, and acousticness) and **lyrics-based properties** (like length, word diversity, and repetition).  
+By merging **audio feature data** and **lyrics data**, the goal is to analyze how musical features align with textual patterns.  
 
-Music is a powerful tool for expressing emotions. Some songs feel energetic and happy, while others are calm or melancholic.  
-I often notice that the songs I listen to sound "happy" but sometimes have sad lyrics.  
-This inspired me to explore the relationship between **what we hear (audio)** and **what we say (lyrics)** — to see if the data reflects these emotional contrasts.
+The merged dataset contains approximately **1,700 songs**, created by combining two public Kaggle datasets using the song and the artist names as matching keys.
 
-Through this project, I also aim to:
-- Apply the techniques learned in DSA210 to a real-world dataset.
-- Develop stronger skills in exploratory data analysis and hypothesis testing.
-- Build a small predictive model that connects lyrical and musical characteristics.
+---
+
+## 💡 Motivation
+Music is one of the most universal forms of human expression and a beautiful art.  
+While platforms like Spotify evaluate songs through numerical attributes (energy, valence, tempo), the lyrics carry emotional and linguistic meaning.  
+Through this project, I aim to connect these two perspectives — exploring whether songs that *sound* similar also *read* similarly, even when analyzed through simple statistical and linguistic features.
 
 ---
 
 ## 🎯 Objectives
-
-1. Analyze the relationship between **audio features** (energy, danceability, valence, loudness, etc.) and **lyrics-based statistics**.
-2. Apply **EDA, visualization**, and **hypothesis testing** to understand correlations between musical and textual properties.
-3. Build a **simple supervised ML model** (e.g., Linear Regression or Decision Tree) to predict musical mood (valence) from lyrics-based features.
-4. Practice data cleaning, feature creation, and model evaluation techniques within the DSA210 learning scope.
+- **Merge** and preprocess two different song datasets.  
+- **Perform exploratory data analysis (EDA)** to uncover general patterns and correlations.  
+- **Analyze** basic textual features of lyrics (e.g., word count, vocabulary diversity, repetition).  
+- **Apply** statistical and machine learning techniques (e.g., correlation tests, regression, clustering).  
+- **Visualize** results using Python libraries.  
+- **Communicate** key findings clearly through graphs and interpretations.
 
 ---
 
 ## ❓ Research Questions
-
-The main questions this project will explore are:
-
-1. Do songs with higher *valence* (positivity in sound) also have longer or simpler lyrics?  
-2. Is there a relationship between *energy* and *lyrical complexity*?  
-3. Are *acoustic* songs more emotionally diverse in their lyrics than *dance* songs?  
-4. Can basic text-based features (like word count or vocabulary richness) help predict a song’s *valence* or *energy* levels?  
-5. Which musical features show the strongest correlation with lyrical patterns?
+1. Are there correlations between **lyrics length or complexity** and musical features like energy or valence?  
+2. Do songs with higher **danceability or energy** scores have simpler or more repetitive lyrics?  
+3. Can basic lyrical characteristics (e.g., word count, vocabulary richness) help **predict audio features** using simple ML models such as Linear Regression or Decision Tree?  
+4. How do different **artists or genres** differ when comparing their lyrical and acoustic patterns?
 
 ---
 
-*(Next part will include: Data Collection & Sources, Tools & Libraries, Hypotheses, and Machine Learning Models.)*
+## 🗂️ Data Collection & Sources
+
+The analysis uses two public Kaggle datasets:
+
+### **1. Spotify Tracks Dataset**
+🔗 [Spotify Tracks Dataset](https://www.kaggle.com/datasets/maharshipandya/-spotify-tracks-dataset?resource=download)  
+Includes over 100,000 songs with audio and metadata information:
+- `energy`, `loudness`, `acousticness`, `valence`, `tempo`, etc.  
+- `artist_name`, `track_name`, `album_name`
+
+### **2. Audio Features and Lyrics Dataset**
+🔗 [Audio Features and Lyrics Dataset](https://www.kaggle.com/datasets/imuhammad/audio-features-and-lyrics-of-spotify-songs)  
+Contains:
+- `track_name`, `artist_name`, `album_name`  
+- `lyrics` (full text of each song)  
+- some additional audio features
+
+After merging the two datasets on matching fields and getting rid of the same rows, **1,778 common songs** remain and will be used for all analysis steps. If a problem with the datasets emerge, I will find new datasets from Kaggle.
+
+---
+
+## 🧠 Tools & Libraries
+
+- **Python** – main programming language  
+- **Pandas**, **NumPy** – data manipulation and preprocessing  
+- **Matplotlib**, **Seaborn** – data visualization  
+- **Scikit-learn** – applying regression and clustering models  
+- **Basic text analysis using Python** – computing word counts, average word length, and frequency statistics  
