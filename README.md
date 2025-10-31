@@ -12,7 +12,6 @@ This is my **term project for DSA210 (Introduction to Data Science)**.
 4. [Research Questions](#research-questions)  
 5. [Data Collection & Sources](#data-collection--sources)  
 6. [Tools & Libraries](#tools--libraries)  
-7. [Planned Timeline](#planned-timeline)
 
 ---
 
