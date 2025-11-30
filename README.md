@@ -75,4 +75,31 @@ After merging the two datasets on matching fields and getting rid of the same ro
 - **Pandas**, **NumPy** – data manipulation and preprocessing  
 - **Matplotlib**, **Seaborn** – data visualization  
 - **Scikit-learn** – applying regression and clustering models  
-- **Basic text analysis using Python** – computing word counts, average word length, and frequency statistics  
+- **Basic text analysis using Python** – computing word counts, average word length, and frequency statistics
+
+## 📊 Exploratory Data Analysis & Key Findings
+
+In this phase, we merged Spotify Audio Features with lyrics data to analyze the relationship between musicality and textual complexity.
+
+### 1. Feature Engineering
+To ensure statistical rigor, we moved beyond simple word counts and implemented **NLP-based feature extraction**:
+* **Clean Word Count:** Removed stop-words (e.g., "the", "and") to count only meaningful words.
+* **Lexical Diversity (TTR):** Calculated the Type-Token Ratio to measure vocabulary richness.
+* **Filtering:** Excluded instrumental tracks (Instrumentalness > 0.5) to prevent skewing the text analysis.
+
+### 2. Hypothesis Testing Results
+Since the data followed a Power Law distribution rather than a Normal distribution, we used **Spearman Rank Correlation** and **Mann-Whitney U Tests**.
+
+* **Finding 1: Lyrical Complexity vs. Energy**
+    * *Result:* We observed a statistically significant difference (p < 0.05) in lyrical complexity between "High Energy" and "Low Energy" songs.
+    * *Insight:* **Low Energy (Sad/Calm)** songs have a **higher median lexical diversity (0.41)** compared to High Energy songs (0.38). This suggests that calmer songs tend to use a richer, more varied vocabulary, while energetic songs rely more on repetition.
+    
+* **Finding 2: Popularity vs. Lyrics**
+    * *Result:* There is a weak negative correlation between **Lexical Diversity** and **Track Popularity**.
+    * *Insight:* Mainstream hits tend to feature simpler, more repetitive lyrics, potentially making them "catchier" and easier for global audiences to memorize.
+
+### 3. Visualizations
+*Please refer to the `Exploring_Lyrical_and_Musical_Features_of_Songs.ipynb` notebook for full interactive charts including:*
+* Correlation Heatmaps (Audio vs. Lyrical Features).
+* Scatter plots of Tempo vs. Lexical Diversity.
+* Word Clouds of the most frequent meaningful words in the dataset.
