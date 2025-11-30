@@ -11,7 +11,8 @@ This is my **term project for DSA210 (Introduction to Data Science)**.
 3. [Objectives](#objectives)  
 4. [Research Questions](#research-questions)  
 5. [Data Collection & Sources](#data-collection--sources)  
-6. [Tools & Libraries](#tools--libraries)  
+6. [Tools & Libraries](#tools--libraries)
+7. [Exploratory Data Analysis & Key Findings](#exploratory-data-analysis--key-findings)
 
 ---
 
@@ -81,25 +82,18 @@ After merging the two datasets on matching fields and getting rid of the same ro
 
 In this phase, we merged Spotify Audio Features with lyrics data to analyze the relationship between musicality and textual complexity.
 
-### 1. Feature Engineering
+### 1. Feature Engineering (NLP)
 To ensure statistical rigor, we moved beyond simple word counts and implemented **NLP-based feature extraction**:
 * **Clean Word Count:** Removed stop-words (e.g., "the", "and") to count only meaningful words.
 * **Lexical Diversity (TTR):** Calculated the Type-Token Ratio to measure vocabulary richness.
-* **Filtering:** Excluded instrumental tracks (Instrumentalness > 0.5) to prevent skewing the text analysis.
+* **Filtering:** Excluded instrumental tracks (`Instrumentalness > 0.5`) to prevent skewing the text analysis.
 
 ### 2. Hypothesis Testing Results
 Since the data followed a Power Law distribution rather than a Normal distribution, we used **Spearman Rank Correlation** and **Mann-Whitney U Tests**.
 
-* **Finding 1: Lyrical Complexity vs. Energy**
-    * *Result:* We observed a statistically significant difference (p < 0.05) in lyrical complexity between "High Energy" and "Low Energy" songs.
-    * *Insight:* **Low Energy (Sad/Calm)** songs have a **higher median lexical diversity (0.41)** compared to High Energy songs (0.38). This suggests that calmer songs tend to use a richer, more varied vocabulary, while energetic songs rely more on repetition.
-    
-* **Finding 2: Popularity vs. Lyrics**
-    * *Result:* There is a weak negative correlation between **Lexical Diversity** and **Track Popularity**.
-    * *Insight:* Mainstream hits tend to feature simpler, more repetitive lyrics, potentially making them "catchier" and easier for global audiences to memorize.
-
-### 3. Visualizations
-*Please refer to the `Exploring_Lyrical_and_Musical_Features_of_Songs.ipynb` notebook for full interactive charts including:*
-* Correlation Heatmaps (Audio vs. Lyrical Features).
-* Scatter plots of Tempo vs. Lexical Diversity.
-* Word Clouds of the most frequent meaningful words in the dataset.
+| Hypothesis | Test Used | Result | Key Insight |
+|:---:|:---:|:---:|:---|
+| **H1: Energy vs. Complexity** | Spearman | **✅ Supported** | Energetic songs tend to have lower lexical diversity (more repetitive lyrics). |
+| **H2: Danceability vs. Word Count** | Spearman | **✅ Supported** | Danceable songs (Hip-hop/Pop) have significantly higher word counts. |
+| **H3: Sadness vs. Complexity** | Mann-Whitney | **✅ Supported** | "Sad" (Low Valence) songs use a richer, more complex vocabulary than "Happy" songs. |
+| **H4: Acousticness vs. Word Count** | Spearman | **❌ Rejected** | Whether a song is acoustic or electronic does not predict how many words it has. |
