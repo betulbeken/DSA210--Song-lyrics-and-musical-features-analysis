@@ -42,10 +42,10 @@ Through this project, I aim to connect these two perspectives — exploring whet
 ---
 
 ## ❓ Research Questions
-1. Are there correlations between **lyrics length or complexity** and musical features like energy or valence?  
-2. Do songs with higher **danceability or energy** scores have simpler or more repetitive lyrics?  
-3. Can basic lyrical characteristics (e.g., word count, vocabulary richness) help **predict audio features** using simple ML models such as Linear Regression or Decision Tree?  
-4. How do different **artists or genres** differ when comparing their lyrical and acoustic patterns?
+* Are there correlations between **lyrics length or complexity** and musical features like energy or valence?
+* Do songs with higher **danceability or energy** scores have simpler or more repetitive lyrics?
+* Can basic lyrical characteristics (e.g., word count, vocabulary richness) help **predict audio features** using simple ML models?
+* How do different **artists or genres** differ when comparing their lyrical and acoustic patterns?
 
 ---
 
@@ -72,11 +72,11 @@ After merging the two datasets on matching fields and getting rid of the same ro
 
 ## 🧠 Tools & Libraries
 
-- **Python** – main programming language  
-- **Pandas**, **NumPy** – data manipulation and preprocessing  
-- **Matplotlib**, **Seaborn** – data visualization  
-- **Scikit-learn** – applying regression and clustering models  
-- **Basic text analysis using Python** – computing word counts, average word length, and frequency statistics
+* **Python**: Main programming language
+* **Pandas & NumPy**: Data manipulation and preprocessing
+* **Matplotlib & Seaborn**: Data visualization
+* **Scikit-learn**: Applying regression and clustering models
+* **NLTK (Natural Language Toolkit)**: Stop-word removal and text processing
 
 ## 📊 Exploratory Data Analysis & Key Findings
 
