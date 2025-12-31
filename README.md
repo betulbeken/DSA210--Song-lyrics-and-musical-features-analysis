@@ -96,7 +96,7 @@ Overall, the results suggest that **lyrics convey emotional tone to some extent*
 
 - `*.ipynb` – Full analysis notebook  
 - `README.md` – Project overview  
-- Datasets are accessed via external links (not stored locally)
+- All datasets are accessed via public GitHub links to ensure full reproducibility.
   
 
 ## ⚠️ Limitations and Future Work
