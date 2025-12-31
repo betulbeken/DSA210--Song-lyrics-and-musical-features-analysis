@@ -1,51 +1,52 @@
 # 🎵 Music Features & Lyrics Analysis
 
-I'm **Betül Eken**, a sophomore Computer Science and Engineering student at Sabancı University.  
-This is my **term project for DSA210 (Introduction to Data Science)**.
+**Student:** Betül Eken  
+**Course:** DSA210 – Introduction to Data Science  
 
 ---
 
-## 📘 Table of Contents
-1. [Project Overview](#project-overview)  
-2. [Motivation](#motivation)  
-3. [Objectives](#objectives)  
-4. [Research Questions](#research-questions)  
-5. [Data Collection & Sources](#data-collection--sources)  
-6. [Tools & Libraries](#tools--libraries)
-7. [Exploratory Data Analysis & Key Findings](#exploratory-data-analysis--key-findings)
+## 🚀 Project Overview
 
----
+Music is a complex form of expression shaped by both **acoustic properties** and **linguistic content**.  
+While platforms like Spotify quantify songs using numerical audio features (e.g., energy, valence, tempo), lyrics reflect emotional and linguistic patterns that are harder to capture.
 
-## 🎯 Project Overview
-This project explores the relationship between **musical characteristics** (such as energy, loudness, and acousticness) and **lyrics-based properties** (like length, word diversity, and repetition).  
-By merging **audio feature data** and **lyrics data**, the goal is to analyze how musical features align with textual patterns.  
+This project explores **what can and cannot be inferred** from musical and lyrical features by analyzing their relationship with song-level attributes such as **popularity**, **emotional valence**, and **energy**.  
+Rather than aiming for high predictive accuracy, the focus is placed on understanding the **limitations and strengths** of surface-level audio and lyrical representations.
 
-The merged dataset contains approximately **1,700 songs**, created by combining two public Kaggle datasets using the song and the artist names as matching keys.
+The final dataset consists of approximately **1,700 songs**, created by merging two public Spotify-related datasets.
 
 ---
 
 ## 💡 Motivation
-Music is one of the most universal forms of human expression and a beautiful art.  
-While platforms like Spotify evaluate songs through numerical attributes (energy, valence, tempo), the lyrics carry emotional and linguistic meaning.  
-Through this project, I aim to connect these two perspectives — exploring whether songs that *sound* similar also *read* similarly, even when analyzed through simple statistical and linguistic features.
+
+Music recommendation systems often rely heavily on numerical audio features, yet listeners also engage deeply with lyrics.  
+This project is motivated by a simple question:
+
+> *To what extent do lyrics and musical features actually explain how songs feel and perform?*
+
+By combining audio features with basic NLP-based lyrical features, this study investigates whether commonly used representations are sufficient to explain complex musical phenomena.
 
 ---
 
 ## 🎯 Objectives
-- **Merge** and preprocess two different song datasets.  
-- **Perform exploratory data analysis (EDA)** to uncover general patterns and correlations.  
-- **Analyze** basic textual features of lyrics (e.g., word count, vocabulary diversity, repetition).  
-- **Apply** statistical and machine learning techniques (e.g., correlation tests, regression, clustering).  
-- **Visualize** results using Python libraries.  
-- **Communicate** key findings clearly through graphs and interpretations.
+
+- Merge and preprocess audio and lyrics datasets  
+- Extract basic **lyrical complexity features** using NLP  
+- Explore relationships between lyrics, musical features, and emotional attributes  
+- Evaluate the predictive power of lyrical and musical features using **statistical analysis and machine learning**  
+- Interpret results with a focus on **limitations**, not just performance  
 
 ---
 
 ## ❓ Research Questions
-* Are there correlations between **lyrics length or complexity** and musical features like energy or valence?
-* Do songs with higher **danceability or energy** scores have simpler or more repetitive lyrics?
-* Can basic lyrical characteristics (e.g., word count, vocabulary richness) help **predict audio features** using simple ML models?
-* How do different **artists or genres** differ when comparing their lyrical and acoustic patterns?
+
+- Can song **popularity** be predicted using:
+  - musical features?
+  - lyrical features?
+  - a combination of both?
+- Are **simpler and more repetitive lyrics** associated with higher popularity?
+- Can a song’s **emotional valence (mood)** be predicted from lyrical features?
+- Can **song energy level** (high vs. low) be inferred using lyrics alone?
 
 ---
 
@@ -53,47 +54,46 @@ Through this project, I aim to connect these two perspectives — exploring whet
 
 The analysis uses two public Kaggle datasets:
 
-### **1. Spotify Tracks Dataset**
-🔗 [Spotify Tracks Dataset](https://www.kaggle.com/datasets/maharshipandya/-spotify-tracks-dataset?resource=download)  
-Includes over 100,000 songs with audio and metadata information:
-- `energy`, `loudness`, `acousticness`, `valence`, `tempo`, etc.  
-- `artist_name`, `track_name`, `album_name`
+### 1. Spotify Tracks Dataset  
+🔗 https://www.kaggle.com/datasets/maharshipandya/-spotify-tracks-dataset  
 
-### **2. Audio Features and Lyrics Dataset**
-🔗 [Audio Features and Lyrics Dataset](https://www.kaggle.com/datasets/imuhammad/audio-features-and-lyrics-of-spotify-songs)  
-Contains:
-- `track_name`, `artist_name`, `album_name`  
-- `lyrics` (full text of each song)  
-- some additional audio features
+Includes numerical audio features such as:
+`energy`, `valence`, `tempo`, `loudness`, `danceability`
 
-After merging the two datasets on matching fields and getting rid of the same rows, **1,778 common songs** remain and will be used for all analysis steps. If a problem with the datasets emerge, I will find new datasets from Kaggle.
+### 2. Audio Features and Lyrics Dataset  
+🔗 https://www.kaggle.com/datasets/imuhammad/audio-features-and-lyrics-of-spotify-songs  
+
+Includes:
+- full song lyrics  
+- track and artist metadata  
+
+After merging and filtering (removing instrumental and very short songs), **1,700+ songs** remain.
 
 ---
 
 ## 🧠 Tools & Libraries
 
-* **Python**: Main programming language
-* **Pandas & NumPy**: Data manipulation and preprocessing
-* **Matplotlib & Seaborn**: Data visualization
-* **Scikit-learn**: Applying regression and clustering models
-* **NLTK (Natural Language Toolkit)**: Stop-word removal and text processing
+- **Python**
+- **Pandas, NumPy**
+- **Matplotlib, Seaborn**
+- **Scikit-learn**
+- **NLTK**
 
-## 📊 Exploratory Data Analysis & Key Findings
+---
 
-In this phase, we merged Spotify Audio Features with lyrics data to analyze the relationship between musicality and textual complexity.
+## 📊 Key Findings (Summary)
 
-### 1. Feature Engineering (NLP)
-To ensure statistical rigor, we moved beyond simple word counts and implemented **NLP-based feature extraction**:
-* **Clean Word Count:** Removed stop-words (e.g., "the", "and") to count only meaningful words.
-* **Lexical Diversity (TTR):** Calculated the Type-Token Ratio to measure vocabulary richness.
-* **Filtering:** Excluded instrumental tracks (`Instrumentalness > 0.5`) to prevent skewing the text analysis.
+- **Song popularity** cannot be reliably predicted using musical or lyrical features alone  
+- **Lyrical simplicity** shows a weak but consistent association with higher popularity  
+- **Emotional valence** can be partially predicted from lyrics, but performance remains modest  
+- **Song energy** cannot be predicted using lyrics alone, highlighting the dominant role of musical and production features  
 
-### 2. Hypothesis Testing Results
-Since the data followed a Power Law distribution rather than a Normal distribution, we used **Spearman Rank Correlation** and **Mann-Whitney U Tests**.
+Overall, the results suggest that **lyrics convey emotional tone to some extent**, but **popularity and musical intensity are driven by factors beyond surface-level textual features**.
 
-| Hypothesis | Test Used | Result | Key Insight |
-|:---:|:---:|:---:|:---|
-| **H1: Energy vs. Complexity** | Spearman | **✅ Supported** | Energetic songs tend to have lower lexical diversity (more repetitive lyrics). |
-| **H2: Danceability vs. Word Count** | Spearman | **✅ Supported** | Danceable songs (Hip-hop/Pop) have significantly higher word counts. |
-| **H3: Sadness vs. Complexity** | Mann-Whitney | **✅ Supported** | "Sad" (Low Valence) songs use a richer, more complex vocabulary than "Happy" songs. |
-| **H4: Acousticness vs. Word Count** | Spearman | **❌ Rejected** | Whether a song is acoustic or electronic does not predict how many words it has. |
+---
+
+## 📁 Repository Structure
+
+- `*.ipynb` – Full analysis notebook  
+- `README.md` – Project overview  
+- Datasets are accessed via external links (not stored locally)
