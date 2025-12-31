@@ -1,6 +1,6 @@
 # 🎵 Music Features & Lyrics Analysis
 
-**Student:** Betül Eken  34378 
+**Student:** Betül Eken  34378   
 **Course:** DSA210 – Introduction to Data Science  
 
 ---
