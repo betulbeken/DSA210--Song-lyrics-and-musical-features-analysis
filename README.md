@@ -97,3 +97,22 @@ Overall, the results suggest that **lyrics convey emotional tone to some extent*
 - `*.ipynb` – Full analysis notebook  
 - `README.md` – Project overview  
 - Datasets are accessed via external links (not stored locally)
+  
+
+## ⚠️ Limitations and Future Work
+
+This study relies on surface-level lyrical features and does not incorporate semantic embeddings or deep language models.
+Additionally, song popularity is influenced by external factors such as marketing, social trends, and platform algorithms, which are not captured in the dataset.
+
+Future work could explore:
+- contextual or semantic lyric representations,
+- time-based popularity trends,
+- listener behavior data,
+- or cross-cultural comparisons.
+
+## 🤖 Use of AI Tools
+
+AI tools were used to assist with code organization, explanation of statistical methods, and language refinement.
+All analysis design, implementation, and interpretation decisions were made by me.
+
+
